@@ -1,7 +1,8 @@
 const Home = () => {
   return (
     <>
-      <h1>New York Times NEWS</h1>
+      <h1>New York Times</h1>
+      <h3>A React and NYT API project</h3>
     </>
   );
 };

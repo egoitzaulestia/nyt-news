@@ -2,6 +2,14 @@ import { useState } from "react";
 
 const NewsForm = () => {
   const [data, setData] = useData({});
+
+  const handleInputChange = (event) => {
+    console.log(event);
+  };
+
+  const handleSubmit = (event) => {
+    console.log(event);
+  };
   return (
     <form onSubmit={handleSubmit}>
       <input
