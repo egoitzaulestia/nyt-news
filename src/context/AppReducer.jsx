@@ -1,13 +1,13 @@
-const news = (state, action) => {
+const newsReducer = (state, action) => {
   switch (action.type) {
-    case "GET_NEWS":
+    case "SET_ARTICLES":
       return {
         ...state,
-        news: action.payload,
+        articles: action.payload,
       };
     default:
       return state;
   }
 };
 
-export default news;
+export default newsReducer;
