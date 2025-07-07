@@ -1,4 +1,4 @@
-const newsReducer = (state, action) => {
+const AppReducer = (state, action) => {
   switch (action.type) {
     case "SET_ARTICLES":
       return {
@@ -10,4 +10,4 @@ const newsReducer = (state, action) => {
   }
 };
 
-export default newsReducer;
+export default AppReducer;
