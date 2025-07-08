@@ -15,8 +15,27 @@ export const GlobalProvider = ({ children }) => {
     try {
       const { data } = await axios.get(
         "https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json",
-        { params: { "api-key": process.env.NYT_NEWS_APP_NYT_API_KEY } }
+        {
+          params: { "api-key": import.meta.VITE_NYT_API_KEY },
+        }
       );
-    } catch (error) {}
+      dispatch({
+        type: "SET_ARTICLES",
+        payload: data.results,
+      });
+    } catch (err) {
+      console.error("getArticles error:", err);
+    }
   };
+
+  return (
+    <GlobalContext.Provider
+      value={{
+        articles: state.articles,
+        getArticles,
+      }}
+    >
+      {children}
+    </GlobalContext.Provider>
+  );
 };
