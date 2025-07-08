@@ -1,0 +1,84 @@
+/* -----------------------------------------------------------------
+   _reset.scss 
+------------------------------------------------------------------ */
+
+/* Intuitive box-model everywhere */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+}
+
+/* Improve line-height and text rendering */
+html {
+  /* Allow rems to scale if the user changes browser font-size */
+  font-size: 100%; // 16 px by default
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Percent-based heights for easier flexbox/grid layouts */
+html,
+body {
+  height: 100%;
+}
+
+/* Typographic defaults */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #fff;
+  color: #222;
+  text-size-adjust: 100%;
+}
+
+/* Remove built-in typography styles for headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove animations & transitions for people who’ve turned them off */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
