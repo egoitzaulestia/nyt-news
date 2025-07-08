@@ -1,5 +1,11 @@
+import NewsDetail from "../NewsDetail/NewsDetail";
+
 const NewsList = () => {
-  return <div>NewsList</div>;
+  return (
+    <>
+      <NewsDetail />
+    </>
+  );
 };
 
 export default NewsList;
