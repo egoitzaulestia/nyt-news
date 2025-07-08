@@ -12,7 +12,7 @@ const Header = () => {
             Home
           </Link> */}
         </li>
-        <li>
+        <li className="menu__item">
           <a href="#" className="menu__link">
             Form
           </a>
@@ -20,7 +20,7 @@ const Header = () => {
             Form
           </Link> */}
         </li>
-        <li>
+        <li className="menu__item">
           <a href="#" className="menu__link">
             List
           </a>
