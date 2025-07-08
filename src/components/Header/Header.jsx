@@ -5,28 +5,19 @@ const Header = () => {
     <nav className="menu">
       <ul className="menu__list">
         <li className="menu__item">
-          <a href="#" className="menu__link">
+          <Link to={"/"} className="menu__link">
             Home
-          </a>
-          {/* <Link to={"/"} className="menu__link">
-            Home
-          </Link> */}
+          </Link>
         </li>
         <li className="menu__item">
-          <a href="#" className="menu__link">
+          <Link to={"/form"} className="menu__link">
             Form
-          </a>
-          {/* <Link to={"/form"} className="menu__link">
-            Form
-          </Link> */}
+          </Link>
         </li>
         <li className="menu__item">
-          <a href="#" className="menu__link">
+          <Link to={"/list"} className="menu__link">
             List
-          </a>
-          {/* <Link to={"/list"} className="menu__link">
-            List
-          </Link> */}
+          </Link>
         </li>
       </ul>
     </nav>
