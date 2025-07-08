@@ -18,7 +18,7 @@ export const GlobalProvider = ({ children }) => {
       const { data } = await axios.get(
         "https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json",
         {
-          params: { "api-key": import.meta.VITE_NYT_API_KEY },
+          params: { "api-key": import.meta.env.VITE_NYT_API_KEY },
         }
       );
       dispatch({
