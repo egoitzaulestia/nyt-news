@@ -5,6 +5,7 @@ const AppReducer = (state, action) => {
         ...state,
         articles: action.payload,
       };
+
     default:
       return state;
   }
