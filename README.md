@@ -1,3 +1,3 @@
 # NYT News
 
-New York Times News project (on going)
+New York Times News project (ongoing)
