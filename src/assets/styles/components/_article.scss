@@ -1,0 +1,19 @@
+@use "sass:color";
+@use "../abstracts/variables";
+
+.article {
+  margin-bottom: 2rem;
+  text-align: left;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: variables.$color-primary;
+  }
+
+  p.byline {
+    font-size: 0.9rem;
+    color: color.adjust(variables.$color-text-light, $lightness: 20%);
+    margin-bottom: 1rem;
+  }
+}

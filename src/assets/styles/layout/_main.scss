@@ -1,0 +1,7 @@
+// layout/_main.scss
+.main {
+  flex: 1; // take up remaining height
+  overflow-y: auto; // scroll if content is tall
+  padding: 2rem;
+  background: inherit;
+}

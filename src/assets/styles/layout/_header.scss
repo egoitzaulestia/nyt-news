@@ -1,22 +1,86 @@
+// layout/_header.scss
+@use "../abstracts/variables"; // for your color variables
+
 .menu {
+  background-color: variables.$color-bg-dark;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
   &__list {
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-  &__item {
+
+    // center the inline-block items
     display: inline-block;
   }
+
+  &__item {
+    display: inline-block;
+    margin: 0 0.5rem; // space between items
+  }
+
   &__link {
     display: block;
-    padding: 6px 12px;
+    padding: 0.5rem 0.75rem;
+    color: variables.$color-text-light;
     text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.2s, color 0.2s, background 0.2s;
 
     &:hover {
-      scale: 1.75;
+      transform: scale(1.1);
+      color: variables.$color-primary;
+    }
+
+    &.active {
+      background-color: variables.$color-primary;
+      color: variables.$color-bg-light;
+      border-radius: 4px;
     }
   }
-  &--active {
-    color: red;
+}
+
+@media (prefers-color-scheme: light) {
+  .menu {
+    background-color: variables.$color-bg-light;
+
+    &__link {
+      color: variables.$color-text-dark;
+
+      &:hover {
+        color: variables.$color-primary-hover;
+      }
+
+      &.active {
+        color: variables.$color-bg-dark;
+      }
+    }
   }
 }
+
+// .menu {
+//   &__list {
+//     margin: 0;
+//     padding: 0;
+//     list-style: none;
+//   }
+//   &__item {
+//     display: inline-block;
+//   }
+//   &__link {
+//     display: block;
+//     padding: 6px 12px;
+//     text-decoration: none;
+
+//     &:hover {
+//       scale: 1.75;
+//     }
+//   }
+//   &--active {
+//     color: red;
+//   }
+// }

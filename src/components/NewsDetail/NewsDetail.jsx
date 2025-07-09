@@ -7,13 +7,16 @@ const NewsDetail = () => {
 
   useEffect(() => {
     getArticles();
-  }, [getArticles]);
+  }, []);
 
   return (
     articles &&
     articles.map((article) => (
       <div className="article" key={article.id}>
-        <h2>{article.title}</h2>
+        <h2>
+          <Link to={article.url}>{article.title}</Link>
+        </h2>
+        <p>{article.byline}</p>
       </div>
     ))
   );

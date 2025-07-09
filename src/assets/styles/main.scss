@@ -1,3 +1,16 @@
-@import "./base/reset";
+// @import "./base/reset";
 
-@import "./layout/header";
+// // @import './layout/header';
+
+// @import "base/base";
+// @import "layout/header";
+// @import "layout/main";
+// @import "components/article";
+// @import "components/button";
+
+@use "base/reset";
+@use "base/base";
+@use "layout/header";
+@use "layout/main";
+@use "components/article";
+@use "components/button";

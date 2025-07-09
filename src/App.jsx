@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { GlobalProvider } from "./context/GlobalState";
 
-import "./App.css";
+// import "./App.css";
 import Home from "./pages/Home";
 import Form from "./pages/Form";
 import List from "./pages/List";
