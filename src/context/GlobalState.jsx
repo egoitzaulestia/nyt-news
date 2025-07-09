@@ -40,6 +40,10 @@ export const GlobalProvider = ({ children }) => {
     dispatch({ type: "ADD_ARTICLE", payload: article });
   };
 
+  useEffect(() => {
+    getArticles();
+  }, []);
+
   return (
     <GlobalContext.Provider
       value={{
