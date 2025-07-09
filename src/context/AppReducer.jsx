@@ -3,9 +3,13 @@ const AppReducer = (state, action) => {
     case "SET_ARTICLES":
       return {
         ...state,
-        articles: action.payload,
+        apiArticle: action.payload,
+        asticles: [...state.userArticles, ...action.payload],
+        loading: false,
+        error: null,
       };
-    case "ADD_TASK":
+
+    case "ADD_ARTICLE":
       return {
         ...state,
         article: [...state.articles, action.payload],
