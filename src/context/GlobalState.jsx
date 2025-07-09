@@ -18,6 +18,7 @@ export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   const getArticles = async () => {
+    dispatch({ type: "FETCH_START" });
     try {
       const { data } = await axios.get(
         "https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json",
@@ -31,6 +32,7 @@ export const GlobalProvider = ({ children }) => {
       });
     } catch (err) {
       console.error("getArticles error:", err);
+      dispatch({ type: "FETCH_ERROR", payload: err.message });
     }
   };
 
