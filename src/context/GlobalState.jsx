@@ -1,5 +1,5 @@
 // import React, { createContext, useReducer } from "react";
-import React, { useReducer, useEffect } from "react";
+import React, { useReducer, useEffect, useCallback } from "react";
 import axios from "axios";
 import { GlobalContext } from "./GlobalContext";
 import AppReducer from "./AppReducer";
@@ -17,7 +17,7 @@ const initialState = {
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
-  const getArticles = async () => {
+  const getArticles = useCallback(async () => {
     dispatch({ type: "FETCH_START" });
     try {
       const { data } = await axios.get(
@@ -34,7 +34,7 @@ export const GlobalProvider = ({ children }) => {
       console.error("getArticles error:", err);
       dispatch({ type: "FETCH_ERROR", payload: err.message });
     }
-  };
+  }, [dispatch]);
 
   const addArticle = async (article) => {
     dispatch({ type: "ADD_ARTICLE", payload: article });
@@ -42,7 +42,7 @@ export const GlobalProvider = ({ children }) => {
 
   useEffect(() => {
     getArticles();
-  }, []);
+  }, [getArticles]);
 
   return (
     <GlobalContext.Provider

@@ -27,7 +27,7 @@ const AppReducer = (state, action) => {
         ...state,
         apiArticles: action.payload,
         // We merge saved + API articles
-        asticles: [...state.userArticles, ...action.payload],
+        articles: [...state.userArticles, ...action.payload],
         loading: false,
         error: null,
       };

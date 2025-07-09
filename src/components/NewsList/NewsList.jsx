@@ -7,7 +7,7 @@ export default function NewsList() {
 
   useEffect(() => {
     getArticles();
-  }, [getArticles]);
+  }, []);
 
   if (loading) return <p>Loading…</p>;
   if (error) return <p>Sorry, could not load articles.</p>;

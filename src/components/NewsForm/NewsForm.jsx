@@ -14,7 +14,7 @@ const NewsForm = () => {
 
   const handleChange = (event) => {
     console.log(event);
-    setForm((form) => ({ ...form, [event.tarnet.name]: event.target.value }));
+    setForm((form) => ({ ...form, [event.target.name]: event.target.value }));
   };
 
   const handleSubmit = (event) => {
@@ -37,50 +37,88 @@ const NewsForm = () => {
     }, 1000);
   };
 
+  // return (
+  //   <form onSubmit={handleSubmit} className="news-form">
+  //     <div>
+  //       <label>
+  //         Title
+  //         <input
+  //           // type="text"
+  //           name="title"
+  //           value={form.title}
+  //           onChange={handleChange}
+  //           // placeholder="title"
+  //         />
+  //       </label>
+  //     </div>
+
+  //     <div>
+  //       <label>
+  //         Byline
+  //         <input
+  //           // type="text"
+  //           name="byline"
+  //           value={form.byline}
+  //           onChange={handleChange}
+  //           // placeholder="byline"
+  //         />
+  //       </label>
+  //     </div>
+
+  //     <div>
+  //       <label>
+  //         Abstract
+  //         <textarea
+  //           name="body"
+  //           value={form.abstract}
+  //           onChange={handleChange}
+  //           rows={4} /* height */
+  //           // placeholder="Write your story here…"
+  //           // cols={40} /* width */
+  //           // style={{ resize: "vertical" }} /* allow only vertical resize */
+  //         />
+  //       </label>
+  //     </div>
+
+  //     <button type="submit">Add article</button>
+  //   </form>
+  // );
+
   return (
     <form onSubmit={handleSubmit} className="news-form">
-      <div>
-        <label>
-          Title
-          <input
-            // type="text"
-            name="title"
-            value={form.title}
-            onChange={handleChange}
-            // placeholder="title"
-          />
-        </label>
+      <div className="form-group">
+        <label htmlFor="title">Title</label>
+        <input
+          id="title"
+          name="title"
+          value={form.title}
+          onChange={handleChange}
+          required
+        />
       </div>
 
-      <div>
-        <label>
-          Byline
-          <input
-            // type="text"
-            name="byline"
-            value={form.byline}
-            onChange={handleChange}
-            // placeholder="byline"
-          />
-        </label>
+      <div className="form-group">
+        <label htmlFor="byline">Byline</label>
+        <input
+          id="byline"
+          name="byline"
+          value={form.byline}
+          onChange={handleChange}
+        />
       </div>
 
-      <div>
-        <label>
-          Abstract
-          <textarea
-            name="body"
-            value={form.abstract}
-            onChange={handleChange}
-            rows={4} /* height */
-            // placeholder="Write your story here…"
-            // cols={40} /* width */
-            // style={{ resize: "vertical" }} /* allow only vertical resize */
-          />
-        </label>
+      <div className="form-group">
+        <label htmlFor="abstract">Abstract</label>
+        <textarea
+          id="abstract"
+          name="abstract"
+          value={form.abstract}
+          onChange={handleChange}
+          rows={4}
+        />
       </div>
 
-      <button type="submit">Add article</button>
+      <button type="submit">Add Article</button>
     </form>
   );
 };

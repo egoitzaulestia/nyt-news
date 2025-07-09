@@ -1,0 +1,136 @@
+// @use "../abstracts/variables";
+
+// .news-form {
+//   // center & constrain the form
+//   max-width: 480px;
+//   margin: 2rem auto;
+//   padding: 1.5rem;
+//   background: variables.$color-bg-light;
+//   border-radius: 8px;
+//   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+//   // each field group
+//   .form-group {
+//     margin-bottom: 1rem;
+//     display: flex;
+//     flex-direction: column;
+
+//     label {
+//       font-weight: 500;
+//       margin-bottom: 0.25rem;
+//       color: variables.$color-text-dark;
+//     }
+
+//     input,
+//     textarea {
+//       padding: 0.5rem;
+//       border: 1px solid #ccc;
+//       border-radius: 4px;
+//       font: inherit;
+//       resize: vertical;
+
+//       &:focus {
+//         outline: none;
+//         border-color: variables.$color-primary;
+//         box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.2);
+//       }
+//     }
+//   }
+
+//   button {
+//     padding: 0.6rem 1.2rem;
+//     background: variables.$color-primary;
+//     color: variables.$color-bg-light;
+//     border: none;
+//     border-radius: 4px;
+//     font: inherit;
+//     cursor: pointer;
+//     transition: background 0.2s;
+
+//     &:hover {
+//       background: variables.$color-primary-hover;
+//     }
+//   }
+// }
+
+// components/_news-form.scss
+@use "../abstracts/variables";
+
+// Base form wrapper
+.news-form {
+  max-width: 480px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: variables.$color-bg-light;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: variables.$color-text-dark;
+
+  // Dark‐mode override
+  @media (prefers-color-scheme: dark) {
+    background: variables.$color-bg-dark;
+    color: variables.$color-text-light;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font: inherit;
+      background: #f5f5f5;
+      color: variables.$color-text-dark;
+      transition: border-color 0.2s, background 0.2s;
+
+      &:focus {
+        outline: none;
+        border-color: variables.$color-primary;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.2);
+      }
+
+      // Dark‐mode inputs
+      @media (prefers-color-scheme: dark) {
+        background: #2e2e2e;
+        color: variables.$color-text-light;
+        border-color: #444;
+
+        &:focus {
+          background: #3a3a3a;
+        }
+      }
+    }
+  }
+
+  button {
+    display: inline-block;
+    padding: 0.65rem 1.25rem;
+    background: variables.$color-primary;
+    color: variables.$color-bg-light;
+    border: none;
+    border-radius: 6px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+
+    &:hover {
+      background: variables.$color-primary-hover;
+      transform: translateY(-1px);
+    }
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}

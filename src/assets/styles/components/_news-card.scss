@@ -58,7 +58,7 @@
 
   &__placeholder {
     background: variables.$color-primary;
-    color: $color-bg-light;
+    color: variables.$color-bg-light;
     display: grid;
     place-items: center;
     height: 0;
