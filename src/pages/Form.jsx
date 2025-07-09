@@ -4,7 +4,7 @@ import NewsForm from "../components/NewsForm/NewsForm";
 const Form = () => {
   return (
     <main className="page page--form">
-      <h1>Add a News Article</h1>
+      <h1 className="form-title">Add a News Article</h1>
       <NewsForm />
     </main>
   );

@@ -37,53 +37,6 @@ const NewsForm = () => {
     }, 1000);
   };
 
-  // return (
-  //   <form onSubmit={handleSubmit} className="news-form">
-  //     <div>
-  //       <label>
-  //         Title
-  //         <input
-  //           // type="text"
-  //           name="title"
-  //           value={form.title}
-  //           onChange={handleChange}
-  //           // placeholder="title"
-  //         />
-  //       </label>
-  //     </div>
-
-  //     <div>
-  //       <label>
-  //         Byline
-  //         <input
-  //           // type="text"
-  //           name="byline"
-  //           value={form.byline}
-  //           onChange={handleChange}
-  //           // placeholder="byline"
-  //         />
-  //       </label>
-  //     </div>
-
-  //     <div>
-  //       <label>
-  //         Abstract
-  //         <textarea
-  //           name="body"
-  //           value={form.abstract}
-  //           onChange={handleChange}
-  //           rows={4} /* height */
-  //           // placeholder="Write your story here…"
-  //           // cols={40} /* width */
-  //           // style={{ resize: "vertical" }} /* allow only vertical resize */
-  //         />
-  //       </label>
-  //     </div>
-
-  //     <button type="submit">Add article</button>
-  //   </form>
-  // );
-
   return (
     <form onSubmit={handleSubmit} className="news-form">
       <div className="form-group">
