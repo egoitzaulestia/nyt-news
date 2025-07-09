@@ -5,8 +5,11 @@ import { GlobalContext } from "./GlobalContext";
 import AppReducer from "./AppReducer";
 
 const initialState = {
+  userArticles: JSON.parse(localStorage.getItem("userArticles") || "[]"),
+  apiArticles: [],
   articles: [],
-  article: {},
+  loading: false,
+  error: null,
 };
 
 // export const GlobalContext = createContext(initialState);
