@@ -1,4 +1,3 @@
-// import React, { createContext, useReducer } from "react";
 import React, { useReducer, useEffect, useCallback } from "react";
 import axios from "axios";
 import { GlobalContext } from "./GlobalContext";
@@ -11,8 +10,6 @@ const initialState = {
   loading: false,
   error: null,
 };
-
-// export const GlobalContext = createContext(initialState);
 
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);

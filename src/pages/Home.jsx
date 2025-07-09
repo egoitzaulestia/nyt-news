@@ -3,10 +3,6 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    // <>
-    //   <h1>New York Times</h1>
-    //   <h3>A React and NYT API project</h3>
-    // </>
     <main className="home">
       <section className="home__hero">
         <h1 className="home__title">Welcome to NYT Reader</h1>
