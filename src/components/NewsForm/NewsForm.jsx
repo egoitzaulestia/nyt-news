@@ -1,19 +1,23 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 const NewsForm = () => {
-  const [title, setTitle] = useState("");
-  const [byline, setByline] = useState("");
+  const { addArticle } = useContext(GlobalContext);
   const navigate = useNavigate();
+
+  const [form, setForm] = useState({
+    title: "",
+    byline: "",
+    abstract: "",
+  });
 
   const handleInputChange = (event) => {
     console.log(event);
-    setTitle(event.target.value);
-    setByline(event.target.value);
+    setForm((form) => ({ ...form, [event.tarnet.name]: event.target.value }));
   };
 
   const handleSubmit = (event) => {
-    console.log(event);
+    event.preventDefault();
 
     setTimeout(() => {
       navigate("/list");
