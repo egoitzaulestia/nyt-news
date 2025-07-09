@@ -1,25 +1,3 @@
-// const AppReducer = (state, action) => {
-//   switch (action.type) {
-//     case "SET_ARTICLES":
-//       return {
-//         ...state,
-//         articles: action.payload,
-//         loading: false,
-//         error: null,
-//       };
-//     case "ADD_ARTICLE":
-//       return {
-//         ...state,
-//         article: [...state.articles, action.payload],
-//       };
-
-//     default:
-//       return state;
-//   }
-// };
-
-// export default AppReducer;
-
 const AppReducer = (state, action) => {
   switch (action.type) {
     case "SET_ARTICLES":
