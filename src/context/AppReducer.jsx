@@ -5,6 +5,11 @@ const AppReducer = (state, action) => {
         ...state,
         articles: action.payload,
       };
+    case "ADD_TASK":
+      return {
+        ...state,
+        article: [...state.articles, action.payload],
+      };
 
     default:
       return state;
