@@ -1,0 +1,68 @@
+// components/_news-card.scss
+@use "../abstracts/variables";
+
+.news-list {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin: 2rem 0;
+}
+
+.news-card {
+  background-color: variables.$color-bg-dark;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+
+  &__content {
+    padding: 1rem;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: variables.$color-primary;
+  }
+
+  &__byline {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.75rem;
+  }
+
+  &__abstract {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__link {
+    font-weight: 500;
+    color: variables.$color-primary;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .news-card {
+    background-color: variables.$color-bg-light;
+
+    &__byline {
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+}
