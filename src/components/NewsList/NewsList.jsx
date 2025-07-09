@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
 import NewsCard from "../NewsCard/NewsCard";
 
-export default function NewsList() {
+const NewsList = () => {
   const { articles, getArticles, loading, error } = useContext(GlobalContext);
 
   useEffect(() => {
@@ -20,4 +20,6 @@ export default function NewsList() {
       ))}
     </div>
   );
-}
+};
+
+export default NewsList;
