@@ -19,10 +19,23 @@ const NewsForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    // We build a "fake" article object
+    const newArticle = {
+      id: Date.now(),
+      title: form.title,
+      byline: form.byline,
+      abstract: form.abstract,
+      url: "#", // We don't provide a real URL
+      media: [], // if empty we show placeholder
+    };
+
+    addArticle(newArticle);
+
     setTimeout(() => {
       navigate("/list");
     }, 1000);
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <input
