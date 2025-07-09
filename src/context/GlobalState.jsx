@@ -6,6 +6,7 @@ import AppReducer from "./AppReducer";
 
 const initialState = {
   articles: [],
+  article: {},
 };
 
 // export const GlobalContext = createContext(initialState);
@@ -29,6 +30,8 @@ export const GlobalProvider = ({ children }) => {
       console.error("getArticles error:", err);
     }
   };
+
+  const addArticle = async (article) => {};
 
   return (
     <GlobalContext.Provider
