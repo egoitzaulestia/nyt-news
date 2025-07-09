@@ -1,16 +1,3 @@
-// import NewsDetail from "../NewsDetail/NewsDetail";
-
-// const NewsList = () => {
-//   return (
-//     <>
-//       <NewsDetail />
-//     </>
-//   );
-// };
-
-// export default NewsList;
-
-// src/components/NewsList/NewsList.jsx
 import React, { useContext, useEffect } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
 import NewsCard from "../NewsCard/NewsCard";
