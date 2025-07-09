@@ -1,5 +1,5 @@
 // import React, { createContext, useReducer } from "react";
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import axios from "axios";
 import { GlobalContext } from "./GlobalContext";
 import AppReducer from "./AppReducer";
@@ -36,7 +36,9 @@ export const GlobalProvider = ({ children }) => {
     }
   };
 
-  const addArticle = async (article) => {};
+  const addArticle = async (article) => {
+    dispatch({ type: "ADD_ARTICLE", payload: article });
+  };
 
   return (
     <GlobalContext.Provider
